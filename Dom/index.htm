@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            
+        }
+        form{
+            margin-top: 100px;
+            background-color: lightblue;
+            padding: 20px 30px;
+            height: 150px;
+            width: 320px;
+            display: flex;
+            border-radius: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        button{
+            border-radius: 10px;
+            border: 1px solid black;
+            outline: none;
+            width: 50%;
+            height: 30px;
+            font-size: 15px;
+
+        }
+
+        input{
+            font-size: 15px;
+        }
+
+        div{
+            background-color: lightcoral;
+            margin-top: 30px;
+            padding: 20px 30px;
+            display: flex;
+            border-radius: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form action="" id="form-contador">
+        <label for="">Numero inicial</label>
+        <input type="text" id="numero-inicial" value="0">
+        <br>
+        <label for="">Numero final</label>
+        <input type="text" id="numero-final" value="10">
+        <br>
+        <button id="iniciar">Iniciar</button>
+    </form>
+    <div id="output">
+
+    </div>
+    <script>
+        let inputNumeroInicial = document.getElementById('numero-inicial');
+        let inputNumeroFinal = document.getElementById('numero-final');
+        let button = document.getElementById('iniciar');
+        let output = document.getElementById('output');
+        let formContador = document.getElementById('form-contador');
+
+        // inputNumeroInicial.addEventListener('input',function (event) {
+        //     output.textContent = event.target.value
+
+        // });
+
+        formContador.addEventListener('click',function(event){
+            event.preventDefault();
+            output.textContent = ''
+
+            let n1 = Number(inputNumeroInicial.value);
+            let n2 = Number(inputNumeroFinal.value);
+
+            for(let c = n1; c <= n2 ;c++){
+                output.innerHTML += `<strong>${c}</strong><br>`
+            }
+
+            console.log(inputNumeroInicial.value);
+            console.log(inputNumeroFinal.value);
+        });
+
+    </script>
+</body>
+</html>
